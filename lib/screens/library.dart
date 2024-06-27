@@ -1,43 +1,18 @@
 import 'package:elrawdah/constants.dart';
-
 import 'package:elrawdah/screens/widgets/bottom_sheet_header_title.dart';
 import 'package:elrawdah/screens/widgets/exercise_tile.dart';
 import 'package:elrawdah/screens/widgets/greet.dart';
 import 'package:elrawdah/screens/widgets/search_field.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Library extends StatefulWidget {
+  const Library({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Library> createState() => _LibraryState();
 }
 
-class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    initialization();
-  }
-
-  void initialization() async {
-    // This is where you can initialize the resources needed by your app while
-    // the splash screen is displayed.  Remove the following example because
-    // delaying the user experience is a bad design practice!
-    // ignore_for_file: avoid_print
-    print('ready in 3...');
-    await Future.delayed(const Duration(seconds: 1));
-    print('ready in 2...');
-    await Future.delayed(const Duration(seconds: 1));
-    print('ready in 1...');
-    await Future.delayed(const Duration(seconds: 1));
-    print('go!');
-    // FlutterNativeSplash.remove();
-  }
-
-  @override
+class _LibraryState extends State<Library> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 25.0,
                   ),
-                  // SearchField(),
+                  SearchField(),
                   SizedBox(
                     height: 25.0,
                   ),
@@ -102,37 +77,37 @@ class _HomePageState extends State<HomePage> {
                         child: ListView(
                           children: const [
                             ExerciseTile(
-                              listID: 1,
+                              listID: 2,
                               exercise: ' الاستعلام عن القبر',
                               exerciseID: 0,
                               icon: Icons.menu_book,
                               color: Colors.pink,
                             ),
                             ExerciseTile(
-                              listID: 1,
+                              listID: 2,
                               exercise: ' المكتبة الاعلامية',
-                              exerciseID: 3,
-                              icon: Icons.menu_book,
-                              color: Colors.pink,
-                            ),
-                            ExerciseTile(
-                              listID: 1,
-                              exercise: ' التنبيهات',
-                              exerciseID: 4,
-                              icon: Icons.menu_book,
-                              color: Colors.pink,
-                            ),
-                            ExerciseTile(
-                              listID: 1,
-                              exercise: ' المكتبة',
                               exerciseID: 1,
                               icon: Icons.menu_book,
                               color: Colors.pink,
                             ),
                             ExerciseTile(
-                              listID: 1,
-                              exercise: 'مواقع المقابر ',
+                              listID: 2,
+                              exercise: ' التنبيهات',
                               exerciseID: 2,
+                              icon: Icons.menu_book,
+                              color: Colors.pink,
+                            ),
+                            ExerciseTile(
+                              listID: 2,
+                              exercise: ' المكتبة',
+                              exerciseID: 3,
+                              icon: Icons.menu_book,
+                              color: Colors.pink,
+                            ),
+                            ExerciseTile(
+                              listID: 2,
+                              exercise: 'مواقع المقابر ',
+                              exerciseID: 4,
                               icon: Icons.menu_book,
                               color: Colors.orange,
                             ),

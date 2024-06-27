@@ -13,19 +13,24 @@ class Cemetery {
 }
 
 class CemeteryData {
-  String? name, latitude, longitude;
+  String? name, latitude, longitude, description,phone;
   int? id;
   CemeteryData(
       {required this.name,
+
       required this.latitude,
       required this.longitude,
+      required this.description,
+      required this.phone,
       required this.id});
   factory CemeteryData.fromJson(Map<String, dynamic> json) {
     return CemeteryData(
         name: json["name"],
         id: json["id"],
         latitude: json['latitude'],
-        longitude: json['Longitude']);
+        longitude: json['Longitude'],
+        description: json['description'],
+        phone: json['phone']);
   }
 }
 

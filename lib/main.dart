@@ -13,7 +13,7 @@ void main() {
   runApp(GetMaterialApp(
       initialBinding: initBinding(),
       debugShowCheckedModeBanner: false,
-      title: 'Elrawdah App',
+      title: 'Raheel App',
       home: SplashView(
         backgroundColor: Colors.indigo,
         duration: const Duration(seconds: 9),

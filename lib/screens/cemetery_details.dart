@@ -116,6 +116,103 @@ class _CemeteryDetailsState extends State<CemeteryDetails> {
                         ),
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 12.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            20,
+                          ),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        logic.cemeteryData!.description!.isNotEmpty
+                                            ? logic.cemeteryData!.description!
+                                            : "لا يوجد وصف للمقبرة",
+                                        style: const TextStyle(
+                                          fontSize: 19,
+                                          // fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  const Text(
+                                    ":وصف المقبرة",
+                                    style: TextStyle(
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 12.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            20,
+                          ),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        logic.cemeteryData!.phone!.isNotEmpty
+                                            ? logic.cemeteryData!.phone!
+                                            : "لا يوجد ارقام للتواصل",
+
+                                        style: const TextStyle(
+                                          fontSize: 19,
+                                          // fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  const Text(
+                                    ": ارقام التواصل",
+                                    style: TextStyle(
+                                        fontSize: 19,
+
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    
                     SizedBox(
                       height: 480,
                       width: double.infinity,

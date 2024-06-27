@@ -1,5 +1,6 @@
 import 'package:elrawdah/constants.dart';
 import 'package:elrawdah/controller/procedure_controller.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:elrawdah/screens/widgets/app_name.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -120,7 +121,7 @@ class _ProceduresPageState extends State<ProceduresPage> {
                                       const Divider(),
                                       Text(logic.procedures[index].subTitle!),
                                       const Divider(),
-                                      Text(logic.procedures[index].text!)
+                                      HtmlWidget(logic.procedures[index].text!)
                                     ],
                                   );
                                 },

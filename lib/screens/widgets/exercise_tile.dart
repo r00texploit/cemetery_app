@@ -1,8 +1,13 @@
+import 'package:elrawdah/model/cemetery.dart';
 import 'package:elrawdah/screens/bared_page.dart';
 import 'package:elrawdah/screens/cemetery_law.dart';
 import 'package:elrawdah/screens/historical_grave_page.dart';
+import 'package:elrawdah/screens/library.dart';
+import 'package:elrawdah/screens/list_cemetery.dart';
 import 'package:elrawdah/screens/list_country.dart';
 import 'package:elrawdah/screens/procedure_page.dart';
+import 'package:elrawdah/screens/widgets/search_field.dart';
+import 'package:elrawdah/screens/widgets/search_listview.dart';
 import 'package:flutter/material.dart';
 
 final List<Widget> _children = [
@@ -12,18 +17,26 @@ final List<Widget> _children = [
   const ProceduresPage(),
   const ListCountry(),
 ];
+final List<Widget> _homeList = [
+  SearchData(),
+  Library(),
+  ListCemetery()
+  //
+  //
+];
 
 class ExerciseTile extends StatelessWidget {
   const ExerciseTile({
     super.key,
     required this.exercise,
+    required this.listID,
     required this.exerciseID,
     required this.icon,
     required this.color,
   });
 
   final String exercise;
-  final int exerciseID;
+  final int exerciseID, listID;
   final IconData icon;
   final Color color;
 
@@ -32,10 +45,18 @@ class ExerciseTile extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         for (var i = 0; i < 5; i++) {
-          if (exerciseID == i) {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => _children[i],
-            ));
+          if (listID == 1) {
+            if (exerciseID == i) {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => _homeList[i],
+              ));
+            } else {
+              if (exerciseID == i) {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => _children[i],
+                ));
+              }
+            }
           }
         }
       },

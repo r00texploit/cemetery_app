@@ -1,5 +1,6 @@
 import 'package:elrawdah/constants.dart';
 import 'package:elrawdah/controller/cemetery_controller.dart';
+import 'package:elrawdah/controller/country_controller.dart';
 import 'package:elrawdah/model/country.dart';
 import 'package:elrawdah/screens/cemetery_details.dart';
 import 'package:elrawdah/screens/widgets/bottom_sheet_header_title.dart';
@@ -13,10 +14,13 @@ class ListCemetery extends StatefulWidget {
 
   @override
   State<ListCemetery> createState() => _ListCemeteryState();
+  // static
 }
 
 class _ListCemeteryState extends State<ListCemetery> {
   CemeteryController cemeteryController = Get.put(CemeteryController());
+  CountryController countryController = Get.put(CountryController());
+
   @override
   void initState() {
     super.initState();
@@ -24,7 +28,8 @@ class _ListCemeteryState extends State<ListCemetery> {
   }
 
   initCemetery() async {
-    await cemeteryController.getAllCemetery(widget.country!);
+    await countryController.getAllCountry();
+    await cemeteryController.getAllCemetery(countryController.allCountry[0]);
     setState(() {});
   }
 
